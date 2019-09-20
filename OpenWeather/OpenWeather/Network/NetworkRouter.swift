@@ -46,12 +46,6 @@ class WeatherAPIRouter {
                 urlRequest.httpMethod = method.rawValue
                 urlRequest.timeoutInterval = requestTimeOut
                 urlRequest = try URLEncoding.default.encode(urlRequest, with: nil)
-                /*urlRequest = try URLEncoding.default.encode(urlRequest, with: self.params)
-                
-                if self.method != HTTPMethod.get {
-                    let jsonData  = try? JSONSerialization.data(withJSONObject: params!, options: .init(rawValue: 0))
-                    urlRequest.httpBody = jsonData
-                }*/
                 return urlRequest
             }
                 

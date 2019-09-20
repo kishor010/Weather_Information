@@ -8,8 +8,7 @@
 
 import UIKit
 
-protocol ViewToPresenterProtocol: class{
-    
+protocol ViewToPresenterProtocol: class {
     var view: PresenterToViewProtocol? {get set}
     var interactor: PresenterToInteractorProtocol? {get set}
     var router: PresenterToRouterProtocol? {get set}

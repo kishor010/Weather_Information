@@ -17,7 +17,7 @@ class WeatherEntity: Codable {
     var seaLevel: String?
     var city: String?
     var windSpeed: String?
-    var pressure: String?
+    var pressure: String
     
     enum CodingKeys: String, CodingKey {
         case description
@@ -39,6 +39,7 @@ class WeatherEntity: Codable {
         self.pressure = pressure
     }
     
+    //Use : Writing (Archieve object in file or any location)
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(description, forKey: .description)

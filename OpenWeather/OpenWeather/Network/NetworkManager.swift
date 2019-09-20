@@ -12,7 +12,7 @@ import Alamofire
 import SwiftyJSON
 
 private let _sharedInstance = WeatherNetworkManager()
-private let DEBUG_MODE = false
+private let DEBUG_MODE = true
 
 class WeatherNetworkManager {
     

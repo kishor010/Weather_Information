@@ -12,20 +12,6 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
-    
-    func SetViperDelegates() {
-        
-        /*let presenter: ViewToPresenterProtocol & InteractorToPresenterProtocol = NoticePresenter()
-        let interactor: PresenterToInteractorProtocol = NoticeInteractor()
-        let router:PresenterToRouterProtocol = NoticeRouter()
-        
-        view.presentor = presenter
-        presenter.view = view
-        presenter.router = router
-        presenter.interactor = interactor
-        interactor.presenter = presenter*/
     }
     
     @IBAction func BtnWeatherTappedAction(_ sender: Any) {

@@ -34,7 +34,7 @@ class WeatherViewController: UIViewController {
         let router:PresenterToRouterProtocol = WeatherRouter()
         
         self.presentor = presenter
-        presenter.view = self.presentor?.view
+        presenter.view = self
         presenter.router = router
         presenter.interactor = interactor
         interactor.presenter = presenter
@@ -42,11 +42,12 @@ class WeatherViewController: UIViewController {
     
     private func fetchWeatherInfo() {
         self.title = "Weather"
-        presentor?.startFetchingWeatherInfo(city: "Bangalore")
+        presentor?.startFetchingWeatherInfo(city: "Ajmer")
         showProgressIndicator(view: self.view)
     }
 }
 
+//MARK:- Protocol Inherit methods
 extension WeatherViewController: PresenterToViewProtocol {
     func showWeatherInfo(info: WeatherEntity) {
         self.tableView.reloadData()
@@ -59,21 +60,6 @@ extension WeatherViewController: PresenterToViewProtocol {
         alert.addAction(UIAlertAction(title: "Okay", style: UIAlertAction.Style.default, handler: nil))
         self.present(alert, animated: true, completion: nil)
     }
-    
-    
-    /*func showNotice(noticeArray: Array<NoticeModel>) {
-        self.noticeArrayList = noticeArray
-        self.uiTableView.reloadData()
-        hideProgressIndicator(view: self.view)
-    }
-    
-    func showError() {
-        hideProgressIndicator(view: self.view)
-        let alert = UIAlertController(title: "Alert", message: "Problem Fetching Notice", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "Okay", style: UIAlertActionStyle.default, handler: nil))
-        self.present(alert, animated: true, completion: nil)
-        
-    }*/
 }
 
 
