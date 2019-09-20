@@ -6,45 +6,69 @@
 //  Copyright © 2019 Kishor Pahalwani. All rights reserved.
 //
 
-import Foundation
 
+import Foundation
 
 class WeatherEntity: Codable {
     
-    /*var weather:String
-    var temp:String
-    var pressure:String
-    var humidity: String
-    var visibility: String
-    var name: String
+    var description: String?
+    var temp: String?
+    var humidity: String?
+    var seaLevel: String?
+    var city: String?
+    var windSpeed: String?
+    var pressure: String?
     
     enum CodingKeys: String, CodingKey {
-        case title
-        case price
-        case quantity
+        case description
+        case temp
+        case humidity
+        case seaLevel
+        case city
+        case windSpeed
+        case pressure
     }
     
-    init(title:String,price:Double, quantity:Int) {
-        self.title = title
-        self.price = price
-        self.quantity = quantity
+    init(description:String, temp:String, humidity: String, seaLevel: String, city: String, windSpeed: String, pressure: String) {
+        self.description = description
+        self.temp = temp
+        self.humidity = humidity
+        self.seaLevel = seaLevel
+        self.city = city
+        self.windSpeed = windSpeed
+        self.pressure = pressure
     }
     
     func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(title, forKey: .title)
-        try container.encode(price, forKey: .price)
-        try container.encode(quantity, forKey: .quantity)
+        try container.encode(description, forKey: .description)
+        try container.encode(temp, forKey: .temp)
+        try container.encode(humidity, forKey: .humidity)
+        try container.encode(seaLevel, forKey: .seaLevel)
+        try container.encode(city, forKey: .city)
+        try container.encode(windSpeed, forKey: .windSpeed)
+        try container.encode(pressure, forKey: .pressure)
     }
     
     required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        title = try container.decode(String.self, forKey: .title)
-        price = try container.decode(Double.self, forKey: .price)
-        quantity = try container.decode(Int.self, forKey: .quantity)
-    }*/
+        description = try container.decode(String.self, forKey: .description)
+        temp = try container.decode(String.self, forKey: .temp)
+        humidity = try container.decode(String.self, forKey: .humidity)
+        seaLevel = try container.decode(String.self, forKey: .seaLevel)
+        city = try container.decode(String.self, forKey: .city)
+        windSpeed = try container.decode(String.self, forKey: .windSpeed)
+        pressure = try container.decode(String.self, forKey: .pressure)
+    }
 }
 
+
+
+
+
+//--------_Codable--------------
+/*//SON is an agreed upon format for webservices, APIs and apps. ... The Codable protocol is used to go from a JSON data object to an actual Swift class or struct. This is called decoding, because the JSON data is decoded into a format that Swift understands. It also works the other way: encoding Swift objects as JSON.
+*/
 
 
 //--------------------- NSCoding ------------------------
@@ -77,40 +101,3 @@ class WeatherEntity: Codable {
         self.init(title:title,price:price,quantity:quantity)
     }
 }*/
-
-
-
-//--------------------- Codable ------------------------
-
-//SON is an agreed upon format for webservices, APIs and apps. ... The Codable protocol is used to go from a JSON data object to an actual Swift class or struct. This is called decoding, because the JSON data is decoded into a format that Swift understands. It also works the other way: encoding Swift objects as JSON.
-
-/*struct Product: Codable {
-    var title:String
-    var price:Double
-    var quantity:Int
-    enum CodingKeys: String, CodingKey {
-        case title
-        case price
-        case quantity
-    }
-    init(title:String,price:Double, quantity:Int) {
-        self.title = title
-        self.price = price
-        self.quantity = quantity
-    }
-    func encode(to encoder: Encoder) throws {
-        var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(title, forKey: .title)
-        try container.encode(price, forKey: .price)
-        try container.encode(quantity, forKey: .quantity)
-    }
-    init(from decoder: Decoder) throws {
-        let container = try decoder.container(keyedBy: CodingKeys.self)
-        title = try container.decode(String.self, forKey: .title)
-        price = try container.decode(Double.self, forKey: .price)
-        quantity = try container.decode(Int.self, forKey: .quantity)
-    }
-}*/
-
-/* NSCoding is the Objective-C way of archiving data and Codable is the Swift way.
-which is helpful because many Apple types such as UIColor and UIImage conform to NSCoding but not Codable.*/

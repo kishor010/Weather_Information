@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,10 @@
 		F9DBBF49233487C20017D8F9 /* WeatherRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBBF48233487C20017D8F9 /* WeatherRouter.swift */; };
 		F9DBBF4B233487EC0017D8F9 /* WeatherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBBF4A233487EC0017D8F9 /* WeatherViewController.swift */; };
 		F9DBBF4D233488810017D8F9 /* WeatherPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBBF4C233488810017D8F9 /* WeatherPresenter.swift */; };
+		F9DBBF512334B6FE0017D8F9 /* Protocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBBF502334B6FE0017D8F9 /* Protocols.swift */; };
+		F9DBBF532334B7790017D8F9 /* WeatherInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBBF522334B7790017D8F9 /* WeatherInteractor.swift */; };
+		F9DBBF552334BC420017D8F9 /* NetworkRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBBF542334BC420017D8F9 /* NetworkRouter.swift */; };
+		F9DBBF572334CC210017D8F9 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F9DBBF562334CC210017D8F9 /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		F9DBBF48233487C20017D8F9 /* WeatherRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherRouter.swift; sourceTree = "<group>"; };
 		F9DBBF4A233487EC0017D8F9 /* WeatherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherViewController.swift; sourceTree = "<group>"; };
 		F9DBBF4C233488810017D8F9 /* WeatherPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherPresenter.swift; sourceTree = "<group>"; };
+		F9DBBF502334B6FE0017D8F9 /* Protocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Protocols.swift; sourceTree = "<group>"; };
+		F9DBBF522334B7790017D8F9 /* WeatherInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherInteractor.swift; sourceTree = "<group>"; };
+		F9DBBF542334BC420017D8F9 /* NetworkRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkRouter.swift; sourceTree = "<group>"; };
+		F9DBBF562334CC210017D8F9 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +102,6 @@
 		F99D905C23336F640019A04F /* OpenWeather */ = {
 			isa = PBXGroup;
 			children = (
-				F99D9097233409BA0019A04F /* Weather-module */,
 				F99D905D23336F640019A04F /* AppDelegate.swift */,
 				F99D905F23336F640019A04F /* ViewController.swift */,
 				F99D906123336F640019A04F /* Main.storyboard */,
@@ -102,9 +109,9 @@
 				F99D906923336F660019A04F /* LaunchScreen.storyboard */,
 				F99D906C23336F660019A04F /* Info.plist */,
 				F99D906423336F640019A04F /* OpenWeather.xcdatamodeld */,
-				F99D9098233409E50019A04F /* CommonUtils.swift */,
-				F99D909A23340A150019A04F /* UIAppUtils.swift */,
-				F9DBBF46233486830017D8F9 /* Helper.swift */,
+				F99D9097233409BA0019A04F /* Weather-module */,
+				F9DBBF4F2334B3CF0017D8F9 /* Network */,
+				F9DBBF4E2334B3620017D8F9 /* Common */,
 			);
 			path = OpenWeather;
 			sourceTree = "<group>";
@@ -112,12 +119,33 @@
 		F99D9097233409BA0019A04F /* Weather-module */ = {
 			isa = PBXGroup;
 			children = (
+				F9DBBF502334B6FE0017D8F9 /* Protocols.swift */,
 				F99D90952334000D0019A04F /* WeatherEntity.swift */,
 				F9DBBF48233487C20017D8F9 /* WeatherRouter.swift */,
 				F9DBBF4A233487EC0017D8F9 /* WeatherViewController.swift */,
 				F9DBBF4C233488810017D8F9 /* WeatherPresenter.swift */,
+				F9DBBF522334B7790017D8F9 /* WeatherInteractor.swift */,
 			);
 			path = "Weather-module";
+			sourceTree = "<group>";
+		};
+		F9DBBF4E2334B3620017D8F9 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				F99D9098233409E50019A04F /* CommonUtils.swift */,
+				F99D909A23340A150019A04F /* UIAppUtils.swift */,
+				F9DBBF46233486830017D8F9 /* Helper.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		F9DBBF4F2334B3CF0017D8F9 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				F9DBBF542334BC420017D8F9 /* NetworkRouter.swift */,
+				F9DBBF562334CC210017D8F9 /* NetworkManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,10 +266,14 @@
 				F99D906023336F640019A04F /* ViewController.swift in Sources */,
 				F9DBBF4B233487EC0017D8F9 /* WeatherViewController.swift in Sources */,
 				F9DBBF47233486830017D8F9 /* Helper.swift in Sources */,
+				F9DBBF512334B6FE0017D8F9 /* Protocols.swift in Sources */,
 				F99D9099233409E50019A04F /* CommonUtils.swift in Sources */,
+				F9DBBF532334B7790017D8F9 /* WeatherInteractor.swift in Sources */,
 				F99D906623336F640019A04F /* OpenWeather.xcdatamodeld in Sources */,
 				F9DBBF4D233488810017D8F9 /* WeatherPresenter.swift in Sources */,
+				F9DBBF552334BC420017D8F9 /* NetworkRouter.swift in Sources */,
 				F99D905E23336F640019A04F /* AppDelegate.swift in Sources */,
+				F9DBBF572334CC210017D8F9 /* NetworkManager.swift in Sources */,
 				F99D90962334000D0019A04F /* WeatherEntity.swift in Sources */,
 				F99D909B23340A150019A04F /* UIAppUtils.swift in Sources */,
 				F9DBBF49233487C20017D8F9 /* WeatherRouter.swift in Sources */,

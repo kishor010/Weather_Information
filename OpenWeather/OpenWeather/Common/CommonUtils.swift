@@ -8,9 +8,10 @@
 
 import Foundation
 import  UIKit
-/* Show Progress Indicator */
 
-func showProgressIndicator(view:UIView){
+
+/* Show Progress Indicator */
+func showProgressIndicator(view:UIView) {
     
     view.isUserInteractionEnabled = false
     
@@ -18,16 +19,14 @@ func showProgressIndicator(view:UIView){
     let progressIndicator = ProgressIndicator(text: "Loading..")
     progressIndicator.tag = Helper.PROGRESS_INDICATOR_VIEW_TAG
     view.addSubview(progressIndicator)
-    
 }
 
 /* Hide progress Indicator */
-func hideProgressIndicator(view:UIView){
+func hideProgressIndicator(view:UIView) {
     
     view.isUserInteractionEnabled = true
     
     if let viewWithTag = view.viewWithTag(Helper.PROGRESS_INDICATOR_VIEW_TAG) {
         viewWithTag.removeFromSuperview()
     }
-    
 }

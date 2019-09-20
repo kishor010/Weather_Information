@@ -8,9 +8,9 @@
 
 import UIKit
 
-class Weather {
+class WeatherRouter: PresenterToRouterProtocol {
     
-    static func createModule() -> WeatherViewController {
+    /*static func createModule() -> WeatherViewController {
         
         let view = mainstoryboard.instantiateViewController(withIdentifier: "WeatherViewController") as! WeatherViewController
         
@@ -26,7 +26,7 @@ class Weather {
         
         return view
         
-    }
+    }*/
     
     static var mainstoryboard: UIStoryboard{
         return UIStoryboard(name:"Main",bundle: Bundle.main)
