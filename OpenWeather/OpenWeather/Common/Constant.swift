@@ -19,4 +19,5 @@ class Constant {
     static let city = weather + "City" + Dist
     static let windSpeed = weather + "Wind Speed" + Dist
     static let pressure = weather + "Pressure" + Dist
+    static let appId_OpenWeather = "9248b4fb9fac922440b21572a24b3254"
 }

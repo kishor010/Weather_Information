@@ -73,7 +73,7 @@ fileprivate class RestClient {
                 
                 else {
                     if response.response?.statusCode == 404 {
-                         onFailure("City not found" ?? "Error")
+                         onFailure("City not found")
                     }
                     
                     else {

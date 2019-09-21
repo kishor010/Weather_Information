@@ -35,7 +35,7 @@ class WeatherAPIRouter {
         var path: String {
             switch self {
                 case .weatherInfo(let city):
-                return "/data/2.5/weather?appid=9248b4fb9fac922440b21572a24b3254&q=\(city)"
+                return "/data/2.5/weather?appid=\(Constant.appId_OpenWeather)&q=\(city)"
             }
         }
         
