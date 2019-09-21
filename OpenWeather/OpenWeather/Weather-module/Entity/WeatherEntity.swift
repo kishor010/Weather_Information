@@ -62,11 +62,3 @@ class WeatherEntity: Codable {
         pressure = try container.decode(String.self, forKey: .pressure)
     }
 }
-
-
-
-
-
-//--------_Codable--------------
-/*//SON is an agreed upon format for webservices, APIs and apps. ... The Codable protocol is used to go from a JSON data object to an actual Swift class or struct. This is called decoding, because the JSON data is decoded into a format that Swift understands. It also works the other way: encoding Swift objects as JSON.
-*/
