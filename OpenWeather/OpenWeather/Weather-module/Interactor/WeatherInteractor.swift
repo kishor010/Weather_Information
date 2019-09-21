@@ -26,7 +26,7 @@ class WeatherInteractor: PresenterToInteractorProtocol {
     private func BindingWeatherInfo(json: JSON, city: String) -> WeatherEntity {
         
         var description = ""
-        var seaLevel = ""
+        var seaLevel = "0"
         let temp = "\(json["main"]["temp"].rawValue)"
         let humidity = "\(json["main"]["humidity"].rawValue)"
         let pressure = "\(json["main"]["pressure"].rawValue)"

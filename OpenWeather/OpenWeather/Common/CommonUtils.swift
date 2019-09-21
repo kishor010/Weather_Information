@@ -30,3 +30,22 @@ func hideProgressIndicator(view:UIView) {
         viewWithTag.removeFromSuperview()
     }
 }
+
+//MARK:- Set Custom Navigation Bar
+extension UINavigationController {
+    
+    func setCustomNavigation(title: String)  {
+        
+        self.navigationBar.isTranslucent = false
+        self.navigationBar.shadowImage = UIImage()
+        
+        if #available(iOS 11.0, *) {
+            self.navigationBar.prefersLargeTitles = true
+            self.navigationBar.topItem?.largeTitleDisplayMode = .automatic
+        } else {
+            // Fallback on earlier versions
+        }
+        
+        self.navigationBar.topItem?.title = title
+    }
+}

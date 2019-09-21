@@ -16,5 +16,13 @@ typealias onSuccess = (JSON)->()
 typealias onFailure = (String)->()
 
 class Helper {
+    
     static let PROGRESS_INDICATOR_VIEW_TAG:Int = 10
+    
+    static func showAlert(AlertTitle : String, AlertMessage : String) -> UIAlertController {
+        let alert = UIAlertController(title: AlertTitle, message: AlertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+        return alert
+    }
 }
+
