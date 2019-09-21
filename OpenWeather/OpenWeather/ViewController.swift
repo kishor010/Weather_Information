@@ -14,6 +14,11 @@ class ViewController: UIViewController {
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+         self.navigationController?.setCustomNavigation(title: "Home")
+    }
+    
     @IBAction func BtnWeatherTappedAction(_ sender: Any) {
         if let openWeatherViewController = self.storyboard?.instantiateViewController(withIdentifier: "WeatherViewController") as? WeatherViewController {
             self.navigationController?.show(openWeatherViewController, sender: nil)

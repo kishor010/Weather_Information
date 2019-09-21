@@ -18,33 +18,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="jEf-5H-qtE">
-                                <rect key="frame" x="107" y="348" width="200" height="200"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ejs-IB-1Ae" customClass="GradientView" customModule="OpenWeather" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="smM-rZ-NCe">
-                                        <rect key="frame" x="0.0" y="0.0" width="200" height="100"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                        <state key="normal" title="Weather"/>
+                                        <rect key="frame" x="107" y="360" width="200" height="54"/>
+                                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="8gv-Fs-fLh"/>
+                                            <constraint firstAttribute="height" constant="54" id="JyY-C1-93g"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
+                                        <state key="normal" title="Weather Info">
+                                            <color key="titleColor" red="0.0" green="0.99143940210000003" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="BtnWeatherTappedAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OED-7r-nqI"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="C80-ad-vhP">
-                                        <rect key="frame" x="0.0" y="100" width="200" height="100"/>
-                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="22"/>
-                                        <state key="normal" title="Weather Cast"/>
-                                    </button>
                                 </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="alH-5X-3dl"/>
-                                    <constraint firstAttribute="width" constant="200" id="rKR-p3-ypH"/>
+                                    <constraint firstItem="smM-rZ-NCe" firstAttribute="centerX" secondItem="Ejs-IB-1Ae" secondAttribute="centerX" id="Wbh-oT-k70"/>
+                                    <constraint firstItem="smM-rZ-NCe" firstAttribute="centerY" secondItem="Ejs-IB-1Ae" secondAttribute="centerY" id="gdj-NB-MfR"/>
                                 </constraints>
-                            </stackView>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="endColor">
+                                        <color key="value" red="0.21176470589999999" green="0.2666666667" blue="0.91764705879999997" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="startColor">
+                                        <color key="value" red="0.52156862749999999" green="0.69803921570000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="horizontalMode" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="diagonalMode" value="YES"/>
+                                </userDefinedRuntimeAttributes>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="jEf-5H-qtE" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="bav-2y-OH3"/>
-                            <constraint firstItem="jEf-5H-qtE" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="goJ-LN-aK8"/>
+                            <constraint firstItem="Ejs-IB-1Ae" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="4G5-Q9-4Xa"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Ejs-IB-1Ae" secondAttribute="bottom" id="NyQ-17-zSt"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Ejs-IB-1Ae" secondAttribute="trailing" id="e2n-gf-OWR"/>
+                            <constraint firstItem="Ejs-IB-1Ae" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="lVI-IZ-pDh"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -52,7 +78,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1478" y="21"/>
+            <point key="canvasLocation" x="1476.8115942028987" y="20.758928571428569"/>
         </scene>
         <!--Weather View Controller-->
         <scene sceneID="aMJ-Vs-7dj">
@@ -62,25 +88,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <searchBar contentMode="redraw" placeholder=" Select city " showsSearchResultsButton="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fjD-KP-XW4">
+                                <rect key="frame" x="0.0" y="44" width="414" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="cwS-XG-eyd">
-                                <rect key="frame" x="0.0" y="54" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="100" width="414" height="762"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="mKM-Y6-b3q" id="LIX-rO-1If"/>
                                     <outlet property="delegate" destination="mKM-Y6-b3q" id="drk-ov-ZwP"/>
                                 </connections>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please click on search to check weather information" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mH6-Ac-S31">
+                                <rect key="frame" x="10" y="421.5" width="394" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="cwS-XG-eyd" firstAttribute="top" secondItem="Jwv-O1-7eT" secondAttribute="top" constant="10" id="GIu-GP-71Q"/>
-                            <constraint firstItem="Jwv-O1-7eT" firstAttribute="trailing" secondItem="cwS-XG-eyd" secondAttribute="trailing" id="K7V-Lz-1LT"/>
-                            <constraint firstItem="Jwv-O1-7eT" firstAttribute="bottom" secondItem="cwS-XG-eyd" secondAttribute="bottom" id="cjA-V6-oLv"/>
-                            <constraint firstItem="cwS-XG-eyd" firstAttribute="leading" secondItem="Jwv-O1-7eT" secondAttribute="leading" id="g2r-gd-Ukc"/>
+                            <constraint firstItem="mH6-Ac-S31" firstAttribute="leading" secondItem="Jwv-O1-7eT" secondAttribute="leading" constant="10" id="DHE-BX-1qa"/>
+                            <constraint firstItem="cwS-XG-eyd" firstAttribute="trailing" secondItem="Jwv-O1-7eT" secondAttribute="trailing" id="FbK-uG-vTN"/>
+                            <constraint firstItem="fjD-KP-XW4" firstAttribute="leading" secondItem="Jwv-O1-7eT" secondAttribute="leading" id="Gke-Kl-IUs"/>
+                            <constraint firstItem="cwS-XG-eyd" firstAttribute="top" secondItem="fjD-KP-XW4" secondAttribute="bottom" id="I4g-sI-yNJ"/>
+                            <constraint firstItem="fjD-KP-XW4" firstAttribute="top" secondItem="Jwv-O1-7eT" secondAttribute="top" id="IbD-Qz-8KU"/>
+                            <constraint firstItem="fjD-KP-XW4" firstAttribute="trailing" secondItem="Jwv-O1-7eT" secondAttribute="trailing" id="Kjr-MB-hJD"/>
+                            <constraint firstItem="cwS-XG-eyd" firstAttribute="bottom" secondItem="Jwv-O1-7eT" secondAttribute="bottom" id="V6D-8l-LMs"/>
+                            <constraint firstItem="mH6-Ac-S31" firstAttribute="centerY" secondItem="9jc-SU-CWV" secondAttribute="centerY" id="h7r-pr-BXc"/>
+                            <constraint firstItem="cwS-XG-eyd" firstAttribute="leading" secondItem="Jwv-O1-7eT" secondAttribute="leading" id="phd-NS-1Wc"/>
+                            <constraint firstItem="Jwv-O1-7eT" firstAttribute="trailing" secondItem="mH6-Ac-S31" secondAttribute="trailing" constant="10" id="xfe-S0-8Q9"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Jwv-O1-7eT"/>
                     </view>
                     <connections>
+                        <outlet property="labelSearchMessgae" destination="mH6-Ac-S31" id="Jaz-hK-RfK"/>
+                        <outlet property="searchBar" destination="fjD-KP-XW4" id="Gz9-qT-3Si"/>
                         <outlet property="tableView" destination="cwS-XG-eyd" id="usE-bt-WY2"/>
                     </connections>
                 </viewController>
