@@ -70,35 +70,3 @@ class WeatherEntity: Codable {
 //--------_Codable--------------
 /*//SON is an agreed upon format for webservices, APIs and apps. ... The Codable protocol is used to go from a JSON data object to an actual Swift class or struct. This is called decoding, because the JSON data is decoded into a format that Swift understands. It also works the other way: encoding Swift objects as JSON.
 */
-
-
-//--------------------- NSCoding ------------------------
-
-/*class Product: NSObject, NSCoding {
-    var title:String
-    var price:Double
-    var quantity:Int
-    
-    enum Key:String {
-        case title = "title"
-        case price = "price"
-        case quantity = "quantity"
-    }
-    
-    init(title:String,price:Double, quantity:Int) {
-        self.title = title
-        self.price = price
-        self.quantity = quantity
-    }
-    func encode(with aCoder: NSCoder) {
-        aCoder.encode(title, forKey: Key.title.rawValue)
-        aCoder.encode(price, forKey: Key.price.rawValue)
-        aCoder.encode(quantity, forKey: Key.quantity.rawValue)
-    }
-    convenience required init?(coder aDecoder: NSCoder) {
-        let price = aDecoder.decodeDouble(forKey: Key.price.rawValue)
-        let quantity = aDecoder.decodeInteger(forKey: Key.quantity.rawValue)
-        guard let title = aDecoder.decodeObject(forKey: Key.title.rawValue) as? String else { return nil }
-        self.init(title:title,price:price,quantity:quantity)
-    }
-}*/

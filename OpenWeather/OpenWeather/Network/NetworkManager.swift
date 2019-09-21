@@ -55,18 +55,30 @@ fileprivate class RestClient {
                     print(url)
                 }
                 
-                switch response.result {
-                case .success:
-                    if let result = response.result.value {
-                        let json = JSON(result)
-                        onSuccess(json)
+                if response.response?.statusCode == 200 {
+                    switch response.result {
+                    case .success:
+                        if let result = response.result.value {
+                            let json = JSON(result) //response.response?.statusCode
+                            onSuccess(json)
+                        }
+                        break
+                        
+                    case .failure:
+                        print("failure \(response)")
+                        onFailure(response.error?.localizedDescription ?? "Error")
+                        break
                     }
-                    break
+                }
+                
+                else {
+                    if response.response?.statusCode == 404 {
+                         onFailure("City not found" ?? "Error")
+                    }
                     
-                case .failure:
-                    print("failure \(response)")
-                    onFailure(response.error?.localizedDescription ?? "Error")
-                    break
+                    else {
+                        onFailure(response.error?.localizedDescription ?? "Error")
+                    }
                 }
         }
     }
