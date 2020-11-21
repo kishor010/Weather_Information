@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-         self.navigationController?.setCustomNavigation(title: "Home")
     }
     
     @IBAction func BtnWeatherTappedAction(_ sender: Any) {
